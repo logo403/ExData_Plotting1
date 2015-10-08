@@ -17,7 +17,7 @@ power <- power %>% mutate(Date = dmy_hms(paste(power$Date,power$Time))) %>%
 
 #Plot 2
 png(file="plot2.png")
-with(power, plot(Date,Global_active_power, pch="",
+with(power, plot(Date,Global_active_power, type = "n",
                  ylab="Global Active Power (kilowatts)",xlab=""))
 lines(power$Date,power$Global_active_power)
 dev.off()
